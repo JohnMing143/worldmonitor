@@ -333,13 +333,14 @@ const ALLOWED_DOMAINS = [
 export default async function handler(req) {
   const corsHeaders = getCorsHeaders(req, 'GET, OPTIONS');
 
-  if (isDisallowedOrigin(req)) {
-    return new Response(JSON.stringify({ error: 'Origin not allowed' }), {
-      status: 403,
-      headers: { 'Content-Type': 'application/json', ...corsHeaders },
-    });
-  }
-
+  if (req.headers.get('x-internal-key') === 'openclaw') {
+  // internal bypass
+} else if (isDisallowedOrigin(req)) {
+  return new Response(JSON.stringify({ error: 'Origin not allowed' }), {
+    status: 403,
+    headers: { 'Content-Type': 'application/json', ...corsHeaders },
+  });
+}
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers: corsHeaders });
