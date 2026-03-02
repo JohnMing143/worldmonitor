@@ -8,7 +8,6 @@ const ALLOWED_ORIGIN_PATTERNS = [
   /^tauri:\/\/localhost$/,
   /^asset:\/\/localhost$/,
   /^https:\/\/monitor\.143143\.eu\.org$/,
-  /^https:\/\/worldmonitor-five-topaz\.vercel\.app$/,
 ];
 
 function isAllowedOrigin(origin) {
