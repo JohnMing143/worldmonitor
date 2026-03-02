@@ -11,6 +11,7 @@ const BROWSER_ORIGIN_PATTERNS = [
   ...(process.env.NODE_ENV === 'production' ? [] : [
     /^https?:\/\/localhost(:\d+)?$/,
     /^https?:\/\/127\.0\.0\.1(:\d+)?$/,
+    /^https:\/\/monitor\.143143\.eu\.org$/,
   ]),
 ];
 
