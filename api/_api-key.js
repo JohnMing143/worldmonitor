@@ -8,10 +8,10 @@ const DESKTOP_ORIGIN_PATTERNS = [
 const BROWSER_ORIGIN_PATTERNS = [
   /^https:\/\/(.*\.)?worldmonitor\.app$/,
   /^https:\/\/worldmonitor-[a-z0-9-]+\.vercel\.app$/,
+  /^https:\/\/monitor\.143143\.eu\.org$/,
   ...(process.env.NODE_ENV === 'production' ? [] : [
     /^https?:\/\/localhost(:\d+)?$/,
     /^https?:\/\/127\.0\.0\.1(:\d+)?$/,
-    /^https:\/\/monitor\.143143\.eu\.org$/,
   ]),
 ];
 
